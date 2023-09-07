@@ -17,9 +17,10 @@ jobs:
           git config user.name "Goutam Bot"
           git config user.email "126101710+enriquinho-catalan@users.noreply.github.com"
       
-      - name: Merge main into release
-        run: |
-          git fetch
-          git checkout release
-          git merge origin/main
-          git push origin release 
+      - name: Merge staging -> uat
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: staging
+          target_branch: uat
+          github_token: ${{ secrets.GITHUB_TOKEN }}
