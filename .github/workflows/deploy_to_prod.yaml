@@ -17,10 +17,10 @@ jobs:
           git config user.name "Goutam Bot"
           git config user.email "126101710+enriquinho-catalan@users.noreply.github.com"
       
-      - name: Merge staging -> uat
+      - name: Merge main -> release
         uses: devmasx/merge-branch@master
         with:
           type: now
-          from_branch: staging
-          target_branch: uat
+          from_branch: main
+          target_branch: release
           github_token: ${{ secrets.GITHUB_TOKEN }}
