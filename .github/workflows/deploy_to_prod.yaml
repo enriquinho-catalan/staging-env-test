@@ -1,0 +1,26 @@
+name: Weekly merge main to release
+
+on: push
+  # schedule:
+  #   - cron: '0/5 0 * * *'  # Runs at 00:00 on Mondays
+
+jobs:
+  merge-main-to-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure git
+        run: |
+          git config user.name "Goutam Bot"
+          git config user.email "126101710+enriquinho-catalan@users.noreply.github.com"
+      
+      - name: Merge main -> release
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: main
+          target_branch: release
+          github_token: ${{ secrets.GITHUB_TOKEN }}
