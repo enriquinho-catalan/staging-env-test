@@ -1,8 +1,8 @@
 name: Weekly merge main to release
 
-on: push
-  # schedule:
-  #   - cron: '0/5 0 * * *'  # Runs at 00:00 on Mondays
+on: 
+  schedule:
+     - cron: '0/5 0 * * *'  # Runs at 00:00 on Mondays
 
 jobs:
   merge-main-to-release:
