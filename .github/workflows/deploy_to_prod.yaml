@@ -2,7 +2,7 @@ name: Weekly merge main to release
 
 on: 
   schedule:
-  - cron: '1 * * * *'
+  - cron: '* * * * *'
 
 jobs:
   merge-main-to-release:
